@@ -14,12 +14,15 @@ https://apple.stackexchange.com/questions/147005/can-bash-be-replaced-entirely-i
 
 change the name "workspace" with whatever name you like 
 
+```bash
 hdiutil create -size 15g -type SPARSEBUNDLE -fs JHFS+X -volname workspace
-workspace
+```bash
 
 ## attached the workspace to system
 
+```bash
 hdiutil attach ./workspace.sparsebundle
+```
 
 ## clone the source code to case sensitive disk
 
