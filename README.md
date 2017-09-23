@@ -2,17 +2,17 @@
 
 the document and related material with openwrt
 
-Since I am playing in Mac. Below is for user who is using OSX. 
+Since I am playing in Mac. Below is for user who is using OSX.
 
 ## update bash
 
-following 
+following
 
 https://apple.stackexchange.com/questions/147005/can-bash-be-replaced-entirely-in-os-x
 
-## build case sensitive disk 
+## build case sensitive disk
 
-change the name "workspace" with whatever name you like 
+change the name "workspace" with whatever name you like
 
 ```bash
 hdiutil create -size 15g -type SPARSEBUNDLE -fs JHFS+X -volname workspace
@@ -51,18 +51,18 @@ please select ext4 file system and maltas targeter for qemu
 ## build
 
 ```bash
-make -j2 
+make -j2
 ```
 
 -j command specify the how many parallel jobs used for building.
 
-## run qemu 
+## run qemu
 
 ### create a seperate qemu running dir
 
 copy the .ext4 and \*vmlinux.elf file to a directory, say "qemu"
 
-### run qemu 
+### run qemu
 
 ```bash
 #!/bin/sh
@@ -70,11 +70,11 @@ sudo qemu-system-mipsel -M malta -hda openwrt-malta-le-root.ext4 -kernel openwrt
 ```
 
 
-## setup ipkg repository 
+## setup ipkg repository
 
 ### run http server
 
-in the /bin/packages run the following http server 
+in the /bin/packages run the following http server
 
 ```bash
 python -m SimpleHTTPServer 8000
@@ -116,6 +116,60 @@ python -m SimpleHTTPServer 8000
    #src/gz chaos_calmer_telephony
    http://downloads.openwrt.org/chaos_calmer/15.05.1/malta/le/packages/telephony
 ```
+
+### update the ipkg list
+
+```bash
+root@OpenWrt:/tmp# opkg update
+Downloading http://10.0.2.2:8000/base/Packages.gz.
+Updated list of available packages in /var/opkg-lists/chaos_calmer_base.
+Downloading http://10.0.2.2:8000/base/Packages.sig.
+Signature check passed.
+Downloading http://10.0.2.2:8000/packages/Packages.gz.
+Updated list of available packages in /var/opkg-lists/chaos_calmer_packages.
+Downloading http://10.0.2.2:8000/packages/Packages.sig.
+Signature check passed.
+Downloading http://10.0.2.2:8000/luci/Packages.gz.
+Updated list of available packages in /var/opkg-lists/chaos_calmer_luci.
+Downloading http://10.0.2.2:8000/luci/Packages.sig.
+Signature check passed.
+Downloading http://10.0.2.2:8000/routing/Packages.gz.
+Updated list of available packages in /var/opkg-lists/chaos_calmer_routing.
+Downloading http://10.0.2.2:8000/routing/Packages.sig.
+Signature check passed.
+Downloading http://10.0.2.2:8000/telephony/Packages.gz.
+Updated list of available packages in /var/opkg-lists/chaos_calmer_telephony.
+Downloading http://10.0.2.2:8000/telephony/Packages.sig.
+Signature check passed.
+Downloading http://10.0.2.2:8000/management/Packages.gz.
+Updated list of available packages in /var/opkg-lists/chaos_calmer_management.
+Downloading http://10.0.2.2:8000/management/Packages.sig.
+```
+
+
+### list specific package
+
+```bash
+root@OpenWrt:/tmp# opkg list | grep pj
+libpj - 2.4-1 - libpj library
+libpjlib-util - 2.4-1 - libpjlib-util library
+libpjmedia - 2.4-1 - libpjmedia library
+libpjnath - 2.4-1 - libpjnath library
+libpjsip - 2.4-1 - libpjsip library
+libpjsip-simple - 2.4-1 - libpjsip-simple library
+libpjsip-ua - 2.4-1 - libpjsip-ua library
+libpjsua - 2.4-1 - libpjsua library
+libpjsua2 - 2.4-1 - libpjsua2 library
+```
+
+### install the package
+
+```bash
+root@OpenWrt:/tmp# opkg install libpjsua2
+Package libpjsua2 (2.4-1) installed in root is up to date.
+```
+
+opkg will automatically resolve the depedency issues.
 
 ## other topic:
 
