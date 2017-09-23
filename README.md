@@ -16,7 +16,7 @@ change the name "workspace" with whatever name you like
 
 ```bash
 hdiutil create -size 15g -type SPARSEBUNDLE -fs JHFS+X -volname workspace
-```bash
+```
 
 ## attached the workspace to system
 
