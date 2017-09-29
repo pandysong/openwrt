@@ -1,0 +1,28 @@
+diff --git a/net/baresip/Makefile b/net/baresip/Makefile
+index c93aa0f..b25f605 100644
+--- a/net/baresip/Makefile
++++ b/net/baresip/Makefile
+@@ -22,6 +22,7 @@ PKG_MAINTAINER:=Jiri Slachta <jiri@slachta.eu>
+ 
+ baresip-mods:= \
+ 	alsa \
++	pulse \
+ 	avcodec \
+ 	avformat \
+ 	cons \
+@@ -55,6 +56,7 @@ $(call Package/baresip/Default)
+ endef
+ 
+ baresip-mod-alsa      := USE_ALSA
++baresip-mod-pulse     := USE_PULSE
+ baresip-mod-avcodec   := USE_AVCODEC
+ baresip-mod-avformat  := USE_AVFORMAT
+ baresip-mod-cons      := USE_CONS
+@@ -137,6 +139,7 @@ endef
+ $(eval $(call BuildPackage,baresip))
+ 
+ $(eval $(call BuildPlugin,alsa,ALSA audio driver,alsa,+PACKAGE_baresip-mod-alsa:alsa-lib))
++$(eval $(call BuildPlugin,pulse,Pulse audio driver,pulse,+PACKAGE_baresip-mod-pulse:pulseaudio))
+ $(eval $(call BuildPlugin,avcodec,FFmpeg video codecs,avcodec,+PACKAGE_baresip-mod-avcodec:libffmpeg-full))
+ $(eval $(call BuildPlugin,avformat,FFmpeg video source,avformat,+PACKAGE_baresip-mod-avformat:libffmpeg-full))
+ $(eval $(call BuildPlugin,cons,console UI,cons,))

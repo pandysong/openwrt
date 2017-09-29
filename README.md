@@ -12,5 +12,6 @@ Since I am playing in Mac. Below is for user who is using OSX.
 - [Resolve baresip issue](baresip_issue.md)
 - [Feeds version control](feeds.md)
 - [missing dependency when adding a new package](new-package.md)
+- [baresip-mod-pulse](patch_baresip-mod-pulse.diff)
 
 if you want to play with crosstool-NG, here is the [document](crosstool-NG.md)
