@@ -58,6 +58,18 @@ the binary should be in directory
 bin/malta/packages/telephony/baresip-mod-httpd_0.5.5-1_malta_mipsel.ipk
 ```
 
+## install baresip
+
+```bash
+make package/feeds/telephony/baresip/install
+```
+
+## update package index
+
+```bash
+make package/index
+```
+
 ## install new ipk
 
 [How to setup a local repo](local-ipkg-repo.md)

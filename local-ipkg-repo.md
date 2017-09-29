@@ -1,8 +1,8 @@
 # setup ipkg repository
 
-All repository defined in openwrt 
-/feed.conf.default 
-are from internet. The version might conflict. 
+All repository defined in openwrt
+/feed.conf.default
+are from internet. The version might conflict.
 
 Since a local version of packages has been built, it is possible to play with local repo only.
 
@@ -105,4 +105,26 @@ root@OpenWrt:/tmp# opkg install libpjsua2
 Package libpjsua2 (2.4-1) installed in root is up to date.
 ```
 
-opkg will automatically resolve the depedency issues.
+opkg will automatically resolve the dependency issues.
+
+
+# setting for lede project
+
+```bash
+cd  bin/targets/malta/le
+python -m SimpleHTTPServer 8001 &
+cd -
+cd bin/packages/mipsel_24kc
+python -m SimpleHTTPServer 8000 &
+```
+
+/etc/customfeeds.conf :
+```bash
+src/gz target http://10.0.2.2:8001/packages
+src/gz base http://10.0.2.2:8000/base
+src/gz packages http://10.0.2.2:8000/packages
+src/gz routing http://10.0.2.2:8000/routing
+src/gz telephony http://10.0.2.2:8000/telephony
+```
+
+empty /etc/distfeeds.conf
