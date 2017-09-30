@@ -1,6 +1,6 @@
 # pulseaudio
 
-pulseaudio is very popular in desktop linux. It is a bit tricky to run correctly
+pulseaudio is very popular in desktop Linux. It is a bit tricky to run correctly
 in lede/openwrt
 
 ## start up server
@@ -10,8 +10,8 @@ in lede/openwrt
 ```
 ### possible error
 
-there might be some errors happening when starting the server, you could check
-if the server is up by using ps commdn
+There might be some errors happening when starting the server, you could check
+if the server is up by using `ps` command
 
 ```bash
 4108 pulse     8124 S<   /usr/bin/pulseaudio -vvvvv --log-target=stderr --sys
@@ -19,8 +19,8 @@ if the server is up by using ps commdn
 
 #### disable some module
 
-in my case I need to disable some modules in order to start it up (may need to
-bring them back when necessory later).
+In my case I need to disable some modules in order to start it up (may need to
+bring them back when necessary later).
 
 ```bash
 #load-module module-detect
@@ -34,7 +34,7 @@ bring them back when necessory later).
 
 ## pacmd
 
-in order to run pacmd, following environment setting should be done
+In order to run pacmd, following environment setting should be done
 
 ### env setting
 
@@ -42,7 +42,7 @@ in order to run pacmd, following environment setting should be done
 export PULSE_RUNTIME_PATH=/var/run/pulse
 ```
 
-otherwise you may have following error:
+Otherwise you may have following error:
 
 ```bash
 root@LEDE:/# pacmd
@@ -51,14 +51,14 @@ No PulseAudio daemon running, or not running as session daemon.
 
 ###  load module needed by pacmd
 
-by adding following lines in /etc/pulse/system.pa
+By adding following lines in /etc/pulse/system.pa
 
 ```bash
 # load module that pacmd uses
 load-module module-cli-protocol-unix
 ```
 
-remember to restart the server after chaning the setting.
+Remember to restart the server after changing the setting.
 
 # Reference
 
@@ -66,7 +66,7 @@ This document honors the following link:
 
 http://pulseaudio-bugs.freedesktop.narkive.com/RyQTiLPL/222-pacmd-doesn-t-work-with-pulseaudio-running-as-a-system-wide-daemon
 
-where there is following description
+Where there is following description
 
 ```
 You cannot use the $ in your command above murz... When you set the
@@ -93,3 +93,4 @@ Either way, this is by design and I'm not sure it's something we should
 change, especially as system mode is not really recommended or really
 heavily tested upstream.
 ```
+
