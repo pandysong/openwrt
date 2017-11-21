@@ -11,10 +11,10 @@ src-git telephony https://github.com/openwrt/telephony.git
 ```
 
 It indicates that all packages could be maintained in github.
-btw it also support `src-svn` commands. Full list of commands is not listed,
+BTW it also support `src-svn` commands. Full list of commands is not listed,
 reader may find other source to have a full information.
 
-it is possible to specify the version to use:
+It is possible to specify the version to use:
 ```bash
 src-git telephony https://github.com/openwrt/telephony.git;for-15.05
 ```

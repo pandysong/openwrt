@@ -1,8 +1,8 @@
 # run qemu
 
-## create a seperate qemu running dir
+## create a separate qemu running dir
 
-copy the .ext4 and \*vmlinux.elf file to a directory, say "qemu"
+Copy the .ext4 and \*vmlinux.elf file to a directory, say "qemu"
 
 ## run qemu
 

@@ -1,12 +1,12 @@
 # add a new package
 
-There are a lot of tutorial on internet on how to add new package.
-which will not be repeated.
+There are a lot of tutorial on internet on how to add new package, which will
+not be repeated here.
 
 # problem
 I encounter the problem showing that:
 
-"Package abcdefgh is missing dependencies for libraries - OpenWRT"
+"Package xxxxx is missing dependencies for libraries - OpenWRT"
 
 
 # solution
@@ -23,8 +23,10 @@ https://stackoverflow.com/a/30119735
 cd staging_dir/target-mipsel_24kc_musl/pkginfo
 grep -lr "abcdefgh" --include="*.provides" ./
 ```
-replace the "abcdefgh" with your missing dependency.
-you may find a list of xxx.provides files use one of them in your package
+
+Replace the "xxxxx" with your missing dependency. You may find a list of
+xxx.provides files use one of them in your package
+
 Makefile
 
 ```bash

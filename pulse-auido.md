@@ -17,6 +17,13 @@ if the server is up by using `ps` command
 4108 pulse     8124 S<   /usr/bin/pulseaudio -vvvvv --log-target=stderr --sys
 ```
 
+### log setting
+
+Add log setting in the line begening with "procd_set_param".
+```bash
+procd_set_param command $PROG --log-level=4 --log-meta=1 --log-target=newfile:/tmp/pulse-log-daemon.log
+```
+
 #### disable some module
 
 In my case I need to disable some modules in order to start it up (may need to

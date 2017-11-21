@@ -2,13 +2,13 @@
 
 ## update bash
 
-following
+Following below link on updating `bash` needed.
 
 https://apple.stackexchange.com/questions/147005/can-bash-be-replaced-entirely-in-os-x
 
 ## build case sensitive disk
 
-change the name "workspace" with whatever name you like
+Change the name "workspace" with whatever name you like
 
 ```bash
 hdiutil create -size 15g -type SPARSEBUNDLE -fs JHFS+X -volname workspace
@@ -23,7 +23,7 @@ hdiutil attach ./workspace.sparsebundle
 
 ## clone the source code to case sensitive disk
 
-visit in your browser for a list of project in openwrt
+Visit in your browser for a list of project in openwrt
 
 http://git.openwrt.org
 
@@ -41,7 +41,7 @@ make menuconfig
 
 ### qemu setting
 
-Since I want to run it on QEMU, select ext4 file system and maltas targeter for qemu.
+Since I want to run it on QEMU, select ext4 file system and maltas target for qemu.
 
 ## build
 
