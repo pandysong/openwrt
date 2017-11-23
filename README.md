@@ -1,4 +1,4 @@
-# openwrt
+# openwrt on macbook
 
 Here I wrote the documents which collects the information and experieces that I
 gained when I played with OpenWRT.
@@ -23,3 +23,11 @@ believed that most operation are common for Linux as well.
 
 if you want to play with crosstool-NG, here is the [document](crosstool-NG.md)
 I wrote for your reference.
+
+# lede on Linux
+
+Eventually due to an issue that I could not bypass (and compiler issue), I
+install a VM on mac and start playing lede/openwrt project in Linux
+
+
+- [how to compile on Linux](build_on_linux.md)
