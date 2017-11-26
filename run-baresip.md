@@ -96,7 +96,13 @@ Content-Length:  0
 
 Note that, in config, `audio_player` is used to set the driver and device name.
 
-If there is no hardware device, then we should keep it empty.
+The syntax is
+
+```bash
+audio_player <DriverName> [,DeviceName]
+```
+If we would like to use the default device that is set by Pulse audio, we should
+keep the [,DeviceName] empty.
 
 ```bash
 root@LEDE:/# cat /etc/baresip/config  | grep pulse

@@ -51,7 +51,6 @@ branch/tag `for-15.05` which uses the old version of baresip.
 ```bash
 make package/feeds/telephony/baresip/compile
 ```
-
 the binary should be in directory 
 
 ```bash

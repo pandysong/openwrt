@@ -31,3 +31,6 @@ install a VM on mac and start playing lede/openwrt project in Linux
 
 
 - [how to compile on Linux](build_on_linux.md)
+- [add baresip and baresip pulse module](baresip_pulse.md)
+- [run on QEMU in Linux](run-on-qemu-on-linux.md)
+- [install packages, same as in Mac](local-ipkg-repo.md)

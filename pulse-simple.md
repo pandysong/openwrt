@@ -77,6 +77,9 @@ sip:user@10.0.2.2: session closed: No such device
 
 ```
 
+It might be that the config in baresip is problematic. We may need to change the
+setting of audio_player, for details, please refer to this [doc](run-baresip.md)
+
 ## log in pulseaudio daemon
 
 Add following options in /etc/init.d/pulseaudio script

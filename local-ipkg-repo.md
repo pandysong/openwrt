@@ -118,7 +118,7 @@ cd bin/packages/mipsel_24kc
 python -m SimpleHTTPServer 8000 &
 ```
 
-/etc/customfeeds.conf :
+/etc/okpg/customfeeds.conf :
 ```bash
 src/gz target http://10.0.2.2:8001/packages
 src/gz base http://10.0.2.2:8000/base
@@ -127,4 +127,4 @@ src/gz routing http://10.0.2.2:8000/routing
 src/gz telephony http://10.0.2.2:8000/telephony
 ```
 
-empty /etc/distfeeds.conf
+empty /etc/okpg/distfeeds.conf
