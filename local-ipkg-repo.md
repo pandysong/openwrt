@@ -110,12 +110,15 @@ opkg will automatically resolve the dependency issues.
 
 # setting for lede project
 
+create a [bash file](local_pkg_repo.sh)
+
 ```bash
-cd  bin/targets/malta/le
+cd ~/source/bin/targets/malta/le
 python -m SimpleHTTPServer 8001 &
 cd -
-cd bin/packages/mipsel_24kc
+cd ~/source/bin/packages/mipsel_24kc
 python -m SimpleHTTPServer 8000 &
+cd -
 ```
 
 /etc/okpg/customfeeds.conf :

@@ -9,6 +9,9 @@ baresip -f /etc/baresip
 
 If it is first time to run, this will create config files in /etc/baresip
 
+Modify the /etc/baresip/config accordingly, [here](baresip_config) is the file I
+used to run baresip, which uses Pulse module
+
 
 ### run as daemon
 
